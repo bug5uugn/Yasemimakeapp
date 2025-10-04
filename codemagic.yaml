@@ -85,7 +85,8 @@ workflows:
           echo "CURRENT_PROJECT_VERSION=$BUILD_NUM"
 
       - name: "Archive and export IPA (xcodebuild)"
-        script: |ARCHIVE_PATH="$CM_BUILD_DIR/Trackify.xcarchive"
+        script: |
+          ARCHIVE_PATH="$CM_BUILD_DIR/Trackify.xcarchive"
           EXPORT_PATH="$CM_EXPORT_DIR"
 
           # Доп. флаги версий прямо в xcodebuild (работает без Info.plist)
@@ -129,3 +130,4 @@ workflows:
         key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
         issuer_id: $APP_STORE_CONNECT_ISSUER_ID
         submit_to_testflight: true
+
